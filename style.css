@@ -189,12 +189,20 @@ html {
     transform: translateX(-50%);
     border: 0.6rem solid #222;
     border-bottom: none;
+    perspective: 150rem;
 }
 
 .door {
     width: 100%;
     height: 100%;
     background-color: rgb(85, 68, 24);
+    transition: transform 1s 0.5s;
+    transform-origin: right;
+    cursor: pointer;
+}
+
+.door.change {
+    transform: rotateY(30deg);
 }
 
 .door-handle {
@@ -205,6 +213,12 @@ html {
     top: 45%;
     left: 1rem;
     border-radius: 100% 0.5rem 0.5rem 100%;
+    transform-origin: left;
+    transition: transform 0.5rem;
+}
+
+.door.change .door-handle {
+    transform: rotateZ(20deg);
 }
 
 
